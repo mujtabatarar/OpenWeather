@@ -9,6 +9,6 @@ ReactDOM.render(
   <React.StrictMode>
     <GetData/>
   </React.StrictMode>,
-  document.getElementById('root')
+  
 );
 
