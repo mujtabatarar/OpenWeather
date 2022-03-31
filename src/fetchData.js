@@ -1,9 +1,9 @@
-import React, { useState, useEffect, createContext} from "react";
+import React, { useState, useEffect, useContext, createContext} from "react";
 import ShowWeatherData from "./showData";
-var dataSubmit = false;
+import userContext from "./hookModule";
+var isdataSubmitted = false;
 
 const apiKey = "5f15b9438cb57451f2f761a0a0c6d0dd";
-const userContext = createContext();
 
 
 /**
@@ -26,12 +26,8 @@ function GetData () {
                 .then(result => {
                 console.log(result);
                 setData(result);
-
-                dataSubmit=true;
-                if(dataSubmit){
-                        console.log("mujtaba pass");
-                }
-                console.log(dataSubmit);
+                isdataSubmitted=true;
+                console.log(isdataSubmitted);
                 }).catch(err=>{
                         console.log(err.message);
                 });
@@ -50,6 +46,7 @@ function GetData () {
                         callApi();
                 }
         }
+
         /**
          * Return Input Field and summit button
          */
@@ -60,7 +57,7 @@ function GetData () {
                                 <button onClick={callApiIfInputNotEmpty}>submit</button>
                         </div>
 
-                        {dataSubmit &&
+                        {isdataSubmitted &&
                                 <userContext.Provider value={data}>
                                         <ShowWeatherData weather={data}/>
                                 </userContext.Provider>
