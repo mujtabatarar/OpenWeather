@@ -73,4 +73,3 @@ function GetData () {
 
 }
 export default GetData;
-export default userContext;
