@@ -1,0 +1,6 @@
+Component 1;
+        1- search for location.
+        2- summit button for location. if search box empty aleart will appear.
+        3- open summit api should pass data to a hook.
+Component 2;
+        1- show a box with basic weather info.
