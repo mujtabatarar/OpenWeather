@@ -21,10 +21,7 @@ function ShowWeatherData(){
                 fTemp = Math.round(fTemp);
                 return fTemp;
         }
-         function date(){
-                 const d = new Date();
-
-         }
+         
 
         return(
         <>    

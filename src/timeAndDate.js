@@ -1,10 +1,9 @@
-/**
- * this is module made by mujtaba to access data and time is this format.
- * wednesday 31st march, 2022
- */
-
 import React from "react";
 
+/**
+ * This is module made by mujtaba to access data and time is this format.
+ * wednesday 31st march, 2022
+ */
 function DateAndTimeByMujtaba(){
         let d  = new Date();
         const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
