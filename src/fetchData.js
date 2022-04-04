@@ -41,6 +41,7 @@ function GetData () {
                 const location = document.getElementById("inputField").value;
                 if(location == ""){
                         alert("Please enter your location!");
+                        
                 }else{
                         setUserLocation(location);
                         callApi();
@@ -52,11 +53,29 @@ function GetData () {
          */
         return (
                 <>
-                        <div className="search-box">
-                                <input  id="inputField" type="text/html" placeholder="please enter your city"/>
-                                <button onClick={callApiIfInputNotEmpty}>submit</button>
+
+                       
+                        {/* <nav className="navbar navbar-light bg-light">
+                                <div className="container-fluid">
+                                        <a className="navbar-brand">Open Weather API</a>
+                                        <div className="d-flex">
+                                                <input id="inputField" className="form-control me-2" type="text/html" placeholder="search"/>
+                                                <button className="btn btn-outline-success" onClick={callApiIfInputNotEmpty}>searchh</button>
+                                        </div>
+                                </div>
+                        </nav> */}
+
+                        <div className="ui fluid action input">
+                                <input id= "inputField"  type="text" placeholder="Search..."/>
+                                <button className="ui button" onClick={callApiIfInputNotEmpty}>Search</button>
                         </div>
 
+                       {/* <div>
+                                <input id="inputField" className="form-control me-2" type="text/html" placeholder="search"/>
+                                <button className="btn btn-outline-success" onClick={callApiIfInputNotEmpty}>searchh</button>
+                </div> */}
+                        
+                        
                         {isdataSubmitted &&
                                 <userContext.Provider value={data}>
                                         <ShowWeatherData weather={data}/>
